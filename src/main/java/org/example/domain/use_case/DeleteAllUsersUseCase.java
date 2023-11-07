@@ -10,7 +10,7 @@ import org.example.domain.repository.UserRepository;
 @Singleton
 public class DeleteAllUsersUseCase {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Inject
     public DeleteAllUsersUseCase(@NeverNull UserRepository userRepository) {

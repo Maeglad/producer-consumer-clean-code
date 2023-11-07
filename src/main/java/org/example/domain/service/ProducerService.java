@@ -2,14 +2,7 @@ package org.example.domain.service;
 
 import com.google.inject.Inject;
 import net.bytebuddy.utility.nullability.NeverNull;
-import org.example.domain.model.Buffer;
-import org.example.domain.model.User;
-import org.example.domain.util.AddCommand;
-import org.example.domain.util.Command;
-import org.example.domain.util.DeleteCommand;
-import org.example.domain.util.PrintCommand;
-
-import java.util.Random;
+import org.example.domain.util.*;
 
 public class ProducerService {
     private final Buffer buffer;
@@ -25,27 +18,23 @@ public class ProducerService {
     }
 
     public void start() {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                try {
-                    for (long i = 0L; i < 10000; ++i) {
-                        if (i % resetCount == 0) {
-                            buffer.offer(new DeleteCommand());
-                        } else {
-                            buffer.offer(generateRandomCommand(i));
-                        }
-                        synchronized (lock) {
-                            lock.wait((int)(Math.random()*50) + 1);
-                        }
+        new Thread(() -> {
+            try {
+                for (long i = 0L; i < 10000; ++i) {
+                    if (i % resetCount == 0) {
+                        buffer.offer(new DeleteCommand());
+                    } else {
+                        buffer.offer(generateRandomCommand(i));
                     }
-
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
+                    synchronized (lock) {
+                        lock.wait((int)(Math.random()*50) + 1);
+                    }
                 }
 
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
+
         }).start();
     }
 

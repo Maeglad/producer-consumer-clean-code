@@ -1,16 +1,15 @@
-package org.example.domain.model;
+package org.example.domain.util;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import net.bytebuddy.utility.nullability.NeverNull;
-import org.example.domain.util.Command;
 
 import java.util.Queue;
 
 @Singleton
 public class Buffer {
-    private Queue<Command> queue;
-    private int capacity;
+    private final Queue<Command> queue;
+    private final int capacity;
 
     @Inject
     public Buffer(@NeverNull Queue<Command> queue,

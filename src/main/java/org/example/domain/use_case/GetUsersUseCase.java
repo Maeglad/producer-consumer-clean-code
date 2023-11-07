@@ -1,14 +1,13 @@
 package org.example.domain.use_case;
 
 import com.google.inject.Inject;
-import net.bytebuddy.utility.nullability.NeverNull;
 import org.example.domain.model.User;
 import org.example.domain.repository.UserRepository;
 
 import java.util.List;
 
 public class GetUsersUseCase {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Inject
     public GetUsersUseCase(UserRepository userRepository) {

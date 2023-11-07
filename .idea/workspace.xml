@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="fixed bug in UserDaoImpl that was causing crash">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/domain/service/ConsumerIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/domain/service/ProducerIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/di/MainModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/di/MainModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/service/ConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/service/ConsumerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/service/ProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/service/ProducerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/util/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/util/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/util/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/util/Buffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/data/repository/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/data/repository/UserRepositoryTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="removed test outputs&#10;&#10;fixed user group id to be string instead of Long&#10;&#10;added test for ConsumerService&#10;- test creates buffer with several commands and tests if they are processed correctly&#10;added test for ProducerService&#10;- test checks whether the producer inserts delete command properly based on parameters provided" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +159,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699387743044</updated>
-      <workItem from="1699387744148" duration="9827000" />
+      <workItem from="1699387744148" duration="10292000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit&#10;- added h2 dependency &#10;- added hibernate dependency for easy h2 setup&#10;- added guice dependency for DI">
       <option name="closed" value="true" />
@@ -244,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699396329154</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="removed test outputs&#10;&#10;fixed user group id to be string instead of Long&#10;&#10;added test for ConsumerService&#10;- test creates buffer with several commands and tests if they are processed correctly&#10;added test for ProducerService&#10;- test checks whether the producer inserts delete command properly based on parameters provided">
+      <option name="closed" value="true" />
+      <created>1699398136247</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699398136247</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +267,8 @@
     <MESSAGE value="removed hibernate configuration file and done it in code instead because it was causing errors" />
     <MESSAGE value="implemented buffer for consumer/producer&#10;&#10;added ConsumerService&#10;- consumes commands from buffer&#10;- uses use cases to execute commands&#10;- after every consumed command there is a slight delay&#10;added ProducerService&#10;- produces random commands with reset(DeleteCommand) every few commands&#10;- after every emmited command there is a slight delay &#10;&#10;fixed copy paste error in GetUsersUseCase&#10;&#10;added producer and consumer into Main to run at start of application&#10;&#10;changed AddCommand parameters from integer to long to better fit needs of consumer" />
     <MESSAGE value="fixed bug in UserDaoImpl that was causing crash" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in UserDaoImpl that was causing crash" />
+    <MESSAGE value="removed test outputs&#10;&#10;fixed user group id to be string instead of Long&#10;&#10;added test for ConsumerService&#10;- test creates buffer with several commands and tests if they are processed correctly&#10;added test for ProducerService&#10;- test checks whether the producer inserts delete command properly based on parameters provided" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed test outputs&#10;&#10;fixed user group id to be string instead of Long&#10;&#10;added test for ConsumerService&#10;- test creates buffer with several commands and tests if they are processed correctly&#10;added test for ProducerService&#10;- test checks whether the producer inserts delete command properly based on parameters provided" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,12 +2,10 @@ package org.example.data.repository;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import org.example.Main;
 import org.example.di.MainModule;
 import org.example.di.TestModule;
 import org.example.domain.model.User;
 import org.example.domain.repository.UserRepository;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,6 +22,7 @@ class UserRepositoryTest {
         injector = Guice.createInjector(new TestModule(), new MainModule());
     }
 
+    @Test
     public void testAddNewUserAndGetAllUsersReturnsCorrectValues() {
         UserRepository userRepository = injector.getInstance(UserRepository.class);
 

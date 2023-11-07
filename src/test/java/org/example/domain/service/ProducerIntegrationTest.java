@@ -4,7 +4,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.example.di.MainModule;
 import org.example.di.TestModule;
-import org.example.domain.model.Buffer;
+import org.example.domain.util.Buffer;
 import org.example.domain.util.DeleteCommand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

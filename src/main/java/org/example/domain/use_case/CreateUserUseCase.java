@@ -9,7 +9,7 @@ import org.example.domain.repository.UserRepository;
 @Singleton
 public class CreateUserUseCase {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Inject
     public CreateUserUseCase(@NeverNull UserRepository userRepository) {

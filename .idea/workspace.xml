@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test" />
+    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="implemented all functions in UserRepositoryImpl">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699387743044</updated>
-      <workItem from="1699387744148" duration="4273000" />
+      <workItem from="1699387744148" duration="5009000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit&#10;- added h2 dependency &#10;- added hibernate dependency for easy h2 setup&#10;- added guice dependency for DI">
       <option name="closed" value="true" />
@@ -156,7 +158,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699392007764</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implemented all functions in UserRepositoryImpl">
+      <option name="closed" value="true" />
+      <created>1699392391947</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699392391947</updated>
+    </task>
+    <task id="LOCAL-00005" summary="implemented all functions in UserRepositoryImpl">
+      <option name="closed" value="true" />
+      <created>1699392421587</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699392421587</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +184,8 @@
     <MESSAGE value="initial commit&#10;- added h2 dependency &#10;- added hibernate dependency for easy h2 setup&#10;- added guice dependency for DI" />
     <MESSAGE value="added user entity&#10;added user dao and implemented queries for creating new user, deleting all users and getting all users&#10;&#10;added hibernate configs for h2 in-memory database for test and main module, not sure if we will use it in test module&#10;&#10;added command interface and extended it to 3 classes that will hold data required to execute those commands&#10;&#10;- AddCommand &#10;  - for adding new user&#10;  - contains id, group id, name&#10;  &#10;- DeleteCommand&#10;  - for deleting all users&#10;  - no parameters needed&#10;  &#10;- PrintCommand&#10; - for printing all users&#10; - no parameters needed&#10; &#10;added repository interface&#10;- this will act as middle man between data layer and domain layer&#10;- added functions for add user, delete all users and get all users" />
     <MESSAGE value="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test" />
+    <MESSAGE value="implemented all functions in UserRepositoryImpl" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented all functions in UserRepositoryImpl" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

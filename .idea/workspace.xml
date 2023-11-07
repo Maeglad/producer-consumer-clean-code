@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="added user entity&#10;added user dao and implemented queries for creating new user, deleting all users and getting all users&#10;&#10;added hibernate configs for h2 in-memory database for test and main module, not sure if we will use it in test module&#10;&#10;added command interface and extended it to 3 classes that will hold data required to execute those commands&#10;&#10;- AddCommand &#10;  - for adding new user&#10;  - contains id, group id, name&#10;  &#10;- DeleteCommand&#10;  - for deleting all users&#10;  - no parameters needed&#10;  &#10;- PrintCommand&#10; - for printing all users&#10; - no parameters needed&#10; &#10;added repository interface&#10;- this will act as middle man between data layer and domain layer&#10;- added functions for add user, delete all users and get all users">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/data/data_source/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/data/repository/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/di/MainModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/data/data_source/MockUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/data/repository/UserRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/di/TestModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/data_source/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/data_source/UserDao.java" afterDir="false" />
-    </list>
+    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -140,7 +130,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699387743044</updated>
-      <workItem from="1699387744148" duration="3618000" />
+      <workItem from="1699387744148" duration="4273000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit&#10;- added h2 dependency &#10;- added hibernate dependency for easy h2 setup&#10;- added guice dependency for DI">
       <option name="closed" value="true" />
@@ -158,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699389398180</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test">
+      <option name="closed" value="true" />
+      <created>1699392007764</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699392007764</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,14 +165,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit&#10;- added h2 dependency &#10;- added hibernate dependency for easy h2 setup&#10;- added guice dependency for DI" />
     <MESSAGE value="added user entity&#10;added user dao and implemented queries for creating new user, deleting all users and getting all users&#10;&#10;added hibernate configs for h2 in-memory database for test and main module, not sure if we will use it in test module&#10;&#10;added command interface and extended it to 3 classes that will hold data required to execute those commands&#10;&#10;- AddCommand &#10;  - for adding new user&#10;  - contains id, group id, name&#10;  &#10;- DeleteCommand&#10;  - for deleting all users&#10;  - no parameters needed&#10;  &#10;- PrintCommand&#10; - for printing all users&#10; - no parameters needed&#10; &#10;added repository interface&#10;- this will act as middle man between data layer and domain layer&#10;- added functions for add user, delete all users and get all users" />
-    <option name="LAST_COMMIT_MESSAGE" value="added user entity&#10;added user dao and implemented queries for creating new user, deleting all users and getting all users&#10;&#10;added hibernate configs for h2 in-memory database for test and main module, not sure if we will use it in test module&#10;&#10;added command interface and extended it to 3 classes that will hold data required to execute those commands&#10;&#10;- AddCommand &#10;  - for adding new user&#10;  - contains id, group id, name&#10;  &#10;- DeleteCommand&#10;  - for deleting all users&#10;  - no parameters needed&#10;  &#10;- PrintCommand&#10; - for printing all users&#10; - no parameters needed&#10; &#10;added repository interface&#10;- this will act as middle man between data layer and domain layer&#10;- added functions for add user, delete all users and get all users" />
+    <MESSAGE value="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

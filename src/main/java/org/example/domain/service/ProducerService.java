@@ -55,7 +55,7 @@ public class ProducerService {
         if (randomValue > 0.8) {
             return new PrintCommand();
         } else {
-            return new AddCommand(id, 1L, "user number " + id);
+            return new AddCommand(id, "1", "user number " + id);
         }
     }
 }

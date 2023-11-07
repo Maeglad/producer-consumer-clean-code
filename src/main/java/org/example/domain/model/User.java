@@ -11,7 +11,7 @@ public class User {
     public static final String USER_GUID_FIELD = "USER_GUID";
     public static final String USER_NAME_FIELD = "USER_NAME";
 
-    public User(@NeverNull Long userId, @NeverNull Long userGuid, @NeverNull String userName) {
+    public User(@NeverNull Long userId, @NeverNull String userGuid, @NeverNull String userName) {
         this.userId = userId;
         this.userGuid = userGuid;
         this.userName = userName;
@@ -24,7 +24,7 @@ public class User {
 
     @Column(name = USER_GUID_FIELD)
     @NeverNull
-    private Long userGuid;
+    private String userGuid;
 
     @Column(name = USER_NAME_FIELD)
     @NeverNull
@@ -40,7 +40,7 @@ public class User {
     }
 
     @NeverNull
-    public Long getUserGuid() {
+    public String getUserGuid() {
         return userGuid;
     }
 

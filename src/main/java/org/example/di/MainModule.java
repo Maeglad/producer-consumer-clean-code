@@ -91,6 +91,6 @@ public class MainModule extends AbstractModule {
     @Provides
     @Singleton
     public Buffer providesBuffer() {
-        return new Buffer(new LinkedList<>(), 5);
+        return new Buffer(new LinkedList<>(), 10);
     }
 }

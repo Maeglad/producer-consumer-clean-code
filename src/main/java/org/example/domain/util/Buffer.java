@@ -21,7 +21,6 @@ public class Buffer {
 
     public synchronized void offer(@NeverNull Command command) throws InterruptedException {
         while (queue.size() == capacity) {
-            System.out.println("Buffer full");
             wait();
         }
 
@@ -33,7 +32,6 @@ public class Buffer {
     @NeverNull
     public synchronized Command poll() throws InterruptedException {
         while (queue.isEmpty()) {
-            System.out.println("Buffer empty");
             wait();
         }
 

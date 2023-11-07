@@ -45,12 +45,11 @@ public class ConsumerService {
                             );
                             userUseCases.createUserUseCase().invoke(user);
                         } else if (command instanceof DeleteCommand) {
-                            System.out.println("Deleting");
                             userUseCases.deleteAllUsersUseCase().invoke();
                         } else if (command instanceof PrintCommand) {
                             List<User> users = userUseCases.getUsersUseCase().invoke();
                             for (User user : users) {
-                                System.out.printf("id: %d, group id: %d, name %s%n",
+                                System.out.printf("id: %d, group id: %s, name: %s\n",
                                         user.getUserId(),
                                         user.getUserGuid(),
                                         user.getUserName());

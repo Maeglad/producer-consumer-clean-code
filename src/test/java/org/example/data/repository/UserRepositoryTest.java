@@ -28,7 +28,7 @@ class UserRepositoryTest {
         UserRepository userRepository = injector.getInstance(UserRepository.class);
 
         User user = new User(
-                1L, 2L, "username"
+                1L, "2", "username"
         );
 
         userRepository.addUser(user);
@@ -46,11 +46,11 @@ class UserRepositoryTest {
         UserRepository userRepository = injector.getInstance(UserRepository.class);
 
         User user1 = new User(
-                1L, 11L, "111"
+                1L, "11", "111"
         );
 
         User user2 = new User(
-                2L, 22L, "222"
+                2L, "22", "222"
         );
         // insert users
         userRepository.addUser(user1);
@@ -65,7 +65,7 @@ class UserRepositoryTest {
         UserRepository userRepository = injector.getInstance(UserRepository.class);
 
         User user1 = new User(
-                1L, 2L, "username"
+                1L, "2", "username"
         );
 
         User returnValue = userRepository.addUser(user1);
@@ -81,11 +81,11 @@ class UserRepositoryTest {
         UserRepository userRepository = injector.getInstance(UserRepository.class);
 
         User user1 = new User(
-                1L, 11L, "111"
+                1L, "11", "111"
         );
 
         User user2 = new User(
-                2L, 22L, "222"
+                2L, "22", "222"
         );
         // insert users
         userRepository.addUser(user1);

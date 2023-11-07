@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="implemented all functions in UserRepositoryImpl">
+    <list default="true" id="44549458-52f2-440b-9ad2-593aef3e1dc9" name="Changes" comment="removed hibernate configuration file and done it in code instead because it was causing errors">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/service/ConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/service/ProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/util/Buffer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/di/MainModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/di/MainModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/use_case/GetUsersUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/use_case/GetUsersUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/util/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/util/AddCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +65,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/gaming/IdeaProjects/producer-consumer-clean-code/src/test",
+    "last_opened_file_path": "C:/Users/gaming/IdeaProjects/producer-consumer-clean-code/src/main/java/org/example/domain/use_case",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,11 +76,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gaming\IdeaProjects\producer-consumer-clean-code\src\main\java\org\example\domain\use_case" />
       <recent name="C:\Users\gaming\IdeaProjects\producer-consumer-clean-code\src\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gaming\IdeaProjects\producer-consumer-clean-code\src\main" />
+      <recent name="C:\Users\gaming\IdeaProjects\producer-consumer-clean-code\src\test\resources" />
+      <recent name="C:\Users\gaming\IdeaProjects\producer-consumer-clean-code\src\main\resources" />
       <recent name="C:\Users\gaming\IdeaProjects\producer-consumer-clean-code\src" />
+      <recent name="C:\Users\gaming\IdeaProjects\producer-consumer-clean-code\src\main" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -82,7 +92,7 @@
       <recent name="org.example.domain.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserRepositoryTest">
+  <component name="RunManager" selected="Application.run">
     <configuration name="run" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="producer-consumer-clean-code.main" />
@@ -132,7 +142,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699387743044</updated>
-      <workItem from="1699387744148" duration="5009000" />
+      <workItem from="1699387744148" duration="7949000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit&#10;- added h2 dependency &#10;- added hibernate dependency for easy h2 setup&#10;- added guice dependency for DI">
       <option name="closed" value="true" />
@@ -174,26 +184,55 @@
       <option name="project" value="LOCAL" />
       <updated>1699392421587</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added use cases for all commands&#10;added test for use cases where i did not implement tests because it would be copying over repository in this case (as code is virtually same and always will be)">
+      <option name="closed" value="true" />
+      <created>1699393316503</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699393316503</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed hibernate configuration file and done it in code instead because it was causing errors">
+      <option name="closed" value="true" />
+      <created>1699395675929</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699395675929</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit&#10;- added h2 dependency &#10;- added hibernate dependency for easy h2 setup&#10;- added guice dependency for DI" />
     <MESSAGE value="added user entity&#10;added user dao and implemented queries for creating new user, deleting all users and getting all users&#10;&#10;added hibernate configs for h2 in-memory database for test and main module, not sure if we will use it in test module&#10;&#10;added command interface and extended it to 3 classes that will hold data required to execute those commands&#10;&#10;- AddCommand &#10;  - for adding new user&#10;  - contains id, group id, name&#10;  &#10;- DeleteCommand&#10;  - for deleting all users&#10;  - no parameters needed&#10;  &#10;- PrintCommand&#10; - for printing all users&#10; - no parameters needed&#10; &#10;added repository interface&#10;- this will act as middle man between data layer and domain layer&#10;- added functions for add user, delete all users and get all users" />
     <MESSAGE value="changed UserDao to interface for easy injection in tests&#10;added MockUserDao for testing&#10;split off DaoModule from MainModule to allow separate dao injection in tests &#10;&#10;added UserRepositoryImpl with dummy functions&#10;implemented repository test" />
     <MESSAGE value="implemented all functions in UserRepositoryImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented all functions in UserRepositoryImpl" />
+    <MESSAGE value="added use cases for all commands&#10;added test for use cases where i did not implement tests because it would be copying over repository in this case (as code is virtually same and always will be)" />
+    <MESSAGE value="removed hibernate configuration file and done it in code instead because it was causing errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed hibernate configuration file and done it in code instead because it was causing errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/service/ConsumerService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

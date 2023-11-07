@@ -5,6 +5,8 @@ import net.bytebuddy.utility.nullability.NeverNull;
 import org.example.domain.model.User;
 import org.example.domain.repository.UserRepository;
 
+import java.util.List;
+
 public class GetUsersUseCase {
     private UserRepository userRepository;
 
@@ -13,7 +15,7 @@ public class GetUsersUseCase {
         this.userRepository = userRepository;
     }
 
-    public void invoke(@NeverNull User newUser) {
-        userRepository.getUsers();
+    public List<User> invoke() {
+        return userRepository.getUsers();
     }
 }

@@ -2,10 +2,19 @@ package org.example.di;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
+import com.google.inject.Singleton;
 import org.example.data.data_source.UserDao;
 import org.example.data.data_source.UserDaoImpl;
 import org.example.data.repository.UserRepositoryImpl;
+import org.example.domain.model.Buffer;
+import org.example.domain.model.User;
 import org.example.domain.repository.UserRepository;
+import org.example.domain.service.ConsumerService;
+import org.example.domain.service.ProducerService;
+import org.example.domain.use_case.CreateUserUseCase;
+import org.example.domain.use_case.DeleteAllUsersUseCase;
+import org.example.domain.use_case.GetUsersUseCase;
+import org.example.domain.use_case.UserUseCases;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -57,5 +66,31 @@ public class MainModule extends AbstractModule {
     @Provides
     public UserRepositoryImpl provideUserRepositoryImpl(UserDao userDao) {
         return new UserRepositoryImpl(userDao);
+    }
+
+    @Provides
+    public UserUseCases provideUserUseCases(GetUsersUseCase getUsersUseCase,
+                                            CreateUserUseCase createUserUseCase,
+                                            DeleteAllUsersUseCase deleteAllUsersUseCase) {
+        return new UserUseCases(getUsersUseCase,
+                createUserUseCase,
+                deleteAllUsersUseCase);
+    }
+
+    @Provides
+    public ConsumerService provideConsumerService(Buffer buffer,
+                                                  UserUseCases userUseCases) {
+        return new ConsumerService(buffer, userUseCases);
+    }
+
+    @Provides
+    public ProducerService provideProducerService(Buffer buffer) {
+        return new ProducerService(buffer, 15);
+    }
+
+    @Provides
+    @Singleton
+    public Buffer providesBuffer() {
+        return new Buffer(new LinkedList<>(), 5);
     }
 }
